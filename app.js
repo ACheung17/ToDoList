@@ -83,7 +83,6 @@ app.get("/:customListName", function(req, res) {
   }); 
 });
 
-
 app.post("/", function(req, res){
   const itemName = req.body.newItem;
   const listName = req.body.list;
@@ -125,10 +124,7 @@ app.post("/delete", function(req, res) {
   }
 });
 
-app.get("/about", function(req, res){
-  res.render("about");
-});
-
+//allows heroku connect to itself own port, otherwise when running from localhost use port 3000
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
